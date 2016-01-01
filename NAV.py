@@ -20,3 +20,10 @@ class NAV:
         else:
             return NotImplemented
 
+    """
+      Let's make it prettier when we want to print out a NAV object. 
+      We can do this by implementing __str__ which give Python an "informal" string representation
+        of a class.
+    """
+    def __str__(self):
+        return str(self.price)
