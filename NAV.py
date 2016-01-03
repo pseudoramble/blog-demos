@@ -1,3 +1,5 @@
+import numbers
+
 class NAV:
     """
      Our first example of a Python built-in. This should be familiar if you've implemented a class before.
@@ -20,6 +22,19 @@ class NAV:
         else:
             return NotImplemented
 
+    """
+      In case we want to discover the value in respect to a number of shares.
+      Note that this is probably not the best spot to implement this. One might prefer this
+       in another class representing the value of a customer's holdings.
+
+      Also note that `isinstance()` is not good technique in most cases. 
+    """
+    def __mul__(self, amount):
+        if isinstance(amount, numbers.Real) or isinstance(amount, numbers.Integer):
+            return self.price * amount
+        else:
+            return NotImplemented
+        
     """
       Let's make it prettier when we want to print out a NAV object. 
       We can do this by implementing __str__ which give Python an "informal" string representation
